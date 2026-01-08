@@ -1,30 +1,53 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
 .container {
+    height: 100vh;
     display: grid;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 300px 1fr;
+    gap: 30px;
 }
 
 .book-form {
-    background-color: red;
+    background-color: #FFFFC5;
     border: 2px dotted black;
 
     display: flex;
     flex-flow: column wrap;
+    /* justify-content: center; */
+    align-items: center;
+    padding: 10px;
 }
 
-.book-shelf {
-    display: grid;
 
-    grid-template-columns: repeat(auto-fill,minmax(100px,1fr));
-    grid-template-rows: repeat(auto-fill,minmax(200px,1fr));
-}
-
-.book {
-    background-color: green;
-    border: 2px dotted blue;
-}
 
 form {
     visibility: hidden;
+    
+    display: flex;
+    flex-flow: column wrap;
+    gap: 10px;
+}
+
+form > div {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.checkbox {
+    flex-flow: row wrap;
+    gap: 10px;
+}
+
+.addBtn {
+    position: relative;
+    top: 10vh;
+    width: 100px;
 }
 
 .show {
@@ -33,4 +56,53 @@ form {
 
 .hide {
     visibility: hidden;
+}
+
+
+
+.book-shelf {
+    background-color: #8f6439;
+    display: grid;
+
+    grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+    grid-template-rows: repeat(auto-fill,minmax(150px,1fr));
+
+    padding: 20px;
+    gap: 10px;
+}
+
+.book {
+    background-color: green;
+    border: 2px dotted blue;
+    padding: 5px;
+    border-radius: 12px;
+
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+
+    text-align: center;
+}
+
+
+.title {
+    font-size: 1.5rem;
+}
+
+.author {
+    font-size: 1rem;
+}
+
+.pages {
+    font-size: 0.5rem;
+}
+
+.readWrapper {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.remove {
+    max-width: max-content;
+    align-self: center;
 }
